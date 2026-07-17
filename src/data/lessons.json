@@ -1,0 +1,202 @@
+[
+  {
+    "id": "05521edf-f47f-4e7a-aec5-cdc4ae7368c2",
+    "name": "Academic Probation",
+    "typeLine": "Sorcery — Lesson",
+    "set": "STX",
+    "collectorNumber": "7",
+    "imagePng": "https://cards.scryfall.io/png/front/0/5/05521edf-f47f-4e7a-aec5-cdc4ae7368c2.png?1783927395",
+    "imageLarge": "https://cards.scryfall.io/large/front/0/5/05521edf-f47f-4e7a-aec5-cdc4ae7368c2.jpg?1783927395",
+    "scryfallUri": "https://scryfall.com/card/stx/7/academic-probation?utm_source=api"
+  },
+  {
+    "id": "8be52d88-f430-4437-a0d3-590c2947c838",
+    "name": "Basic Conjuration",
+    "typeLine": "Sorcery — Lesson",
+    "set": "STX",
+    "collectorNumber": "120",
+    "imagePng": "https://cards.scryfall.io/png/front/8/b/8be52d88-f430-4437-a0d3-590c2947c838.png?1783927348",
+    "imageLarge": "https://cards.scryfall.io/large/front/8/b/8be52d88-f430-4437-a0d3-590c2947c838.jpg?1783927348",
+    "scryfallUri": "https://scryfall.com/card/stx/120/basic-conjuration?utm_source=api"
+  },
+  {
+    "id": "e1951763-be97-400c-aa95-6b101f47bddf",
+    "name": "Confront the Past",
+    "typeLine": "Sorcery — Lesson",
+    "set": "STX",
+    "collectorNumber": "67",
+    "imagePng": "https://cards.scryfall.io/png/front/e/1/e1951763-be97-400c-aa95-6b101f47bddf.png?1783927369",
+    "imageLarge": "https://cards.scryfall.io/large/front/e/1/e1951763-be97-400c-aa95-6b101f47bddf.jpg?1783927369",
+    "scryfallUri": "https://scryfall.com/card/stx/67/confront-the-past?utm_source=api"
+  },
+  {
+    "id": "0dcca120-b72e-4007-98e1-cb22e7b9a705",
+    "name": "Containment Breach",
+    "typeLine": "Sorcery — Lesson",
+    "set": "STX",
+    "collectorNumber": "125",
+    "imagePng": "https://cards.scryfall.io/png/front/0/d/0dcca120-b72e-4007-98e1-cb22e7b9a705.png?1783927344",
+    "imageLarge": "https://cards.scryfall.io/large/front/0/d/0dcca120-b72e-4007-98e1-cb22e7b9a705.jpg?1783927344",
+    "scryfallUri": "https://scryfall.com/card/stx/125/containment-breach?utm_source=api"
+  },
+  {
+    "id": "ea51991c-1589-4c62-965b-5ae8d233520b",
+    "name": "Elemental Summoning",
+    "typeLine": "Sorcery — Lesson",
+    "set": "STX",
+    "collectorNumber": "183",
+    "imagePng": "https://cards.scryfall.io/png/front/e/a/ea51991c-1589-4c62-965b-5ae8d233520b.png?1783927316",
+    "imageLarge": "https://cards.scryfall.io/large/front/e/a/ea51991c-1589-4c62-965b-5ae8d233520b.jpg?1783927316",
+    "scryfallUri": "https://scryfall.com/card/stx/183/elemental-summoning?utm_source=api"
+  },
+  {
+    "id": "46b394fc-a99c-44e7-9226-da0699167541",
+    "name": "Environmental Sciences",
+    "typeLine": "Sorcery — Lesson",
+    "set": "STX",
+    "collectorNumber": "1",
+    "imagePng": "https://cards.scryfall.io/png/front/4/6/46b394fc-a99c-44e7-9226-da0699167541.png?1783927397",
+    "imageLarge": "https://cards.scryfall.io/large/front/4/6/46b394fc-a99c-44e7-9226-da0699167541.jpg?1783927397",
+    "scryfallUri": "https://scryfall.com/card/stx/1/environmental-sciences?utm_source=api"
+  },
+  {
+    "id": "c5642b9d-0daa-4e6b-ad48-f88dd37d6574",
+    "name": "Expanded Anatomy",
+    "typeLine": "Sorcery — Lesson",
+    "set": "STX",
+    "collectorNumber": "2",
+    "imagePng": "https://cards.scryfall.io/png/front/c/5/c5642b9d-0daa-4e6b-ad48-f88dd37d6574.png?1783927396",
+    "imageLarge": "https://cards.scryfall.io/large/front/c/5/c5642b9d-0daa-4e6b-ad48-f88dd37d6574.jpg?1783927396",
+    "scryfallUri": "https://scryfall.com/card/stx/2/expanded-anatomy?utm_source=api"
+  },
+  {
+    "id": "cc3f1f7e-eb19-49c1-a1ee-93b85ac8815c",
+    "name": "Fractal Summoning",
+    "typeLine": "Sorcery — Lesson",
+    "set": "STX",
+    "collectorNumber": "187",
+    "imagePng": "https://cards.scryfall.io/png/front/c/c/cc3f1f7e-eb19-49c1-a1ee-93b85ac8815c.png?1783927314",
+    "imageLarge": "https://cards.scryfall.io/large/front/c/c/cc3f1f7e-eb19-49c1-a1ee-93b85ac8815c.jpg?1783927314",
+    "scryfallUri": "https://scryfall.com/card/stx/187/fractal-summoning?utm_source=api"
+  },
+  {
+    "id": "98739789-80b5-4224-a2e4-09e00654aa9d",
+    "name": "Illuminate History",
+    "typeLine": "Sorcery — Lesson",
+    "set": "STX",
+    "collectorNumber": "108",
+    "imagePng": "https://cards.scryfall.io/png/front/9/8/98739789-80b5-4224-a2e4-09e00654aa9d.png?1783927352",
+    "imageLarge": "https://cards.scryfall.io/large/front/9/8/98739789-80b5-4224-a2e4-09e00654aa9d.jpg?1783927352",
+    "scryfallUri": "https://scryfall.com/card/stx/108/illuminate-history?utm_source=api"
+  },
+  {
+    "id": "04a8a5b8-9743-4d1a-89e9-61bdf180b2e0",
+    "name": "Inkling Summoning",
+    "typeLine": "Sorcery — Lesson",
+    "set": "STX",
+    "collectorNumber": "195",
+    "imagePng": "https://cards.scryfall.io/png/front/0/4/04a8a5b8-9743-4d1a-89e9-61bdf180b2e0.png?1783927310",
+    "imageLarge": "https://cards.scryfall.io/large/front/0/4/04a8a5b8-9743-4d1a-89e9-61bdf180b2e0.jpg?1783927310",
+    "scryfallUri": "https://scryfall.com/card/stx/195/inkling-summoning?utm_source=api"
+  },
+  {
+    "id": "b0bc4682-bcaf-4f51-be0b-9f2851a16e3b",
+    "name": "Introduction to Annihilation",
+    "typeLine": "Sorcery — Lesson",
+    "set": "STX",
+    "collectorNumber": "3",
+    "imagePng": "https://cards.scryfall.io/png/front/b/0/b0bc4682-bcaf-4f51-be0b-9f2851a16e3b.png?1783927394",
+    "imageLarge": "https://cards.scryfall.io/large/front/b/0/b0bc4682-bcaf-4f51-be0b-9f2851a16e3b.jpg?1783927394",
+    "scryfallUri": "https://scryfall.com/card/stx/3/introduction-to-annihilation?utm_source=api"
+  },
+  {
+    "id": "7820923e-bad2-4d6a-92b3-97b9737d2ca9",
+    "name": "Introduction to Prophecy",
+    "typeLine": "Sorcery — Lesson",
+    "set": "STX",
+    "collectorNumber": "4",
+    "imagePng": "https://cards.scryfall.io/png/front/7/8/7820923e-bad2-4d6a-92b3-97b9737d2ca9.png?1783927395",
+    "imageLarge": "https://cards.scryfall.io/large/front/7/8/7820923e-bad2-4d6a-92b3-97b9737d2ca9.jpg?1783927395",
+    "scryfallUri": "https://scryfall.com/card/stx/4/introduction-to-prophecy?utm_source=api"
+  },
+  {
+    "id": "2047592c-739c-41dd-b3e8-31ae1c7688ab",
+    "name": "Mascot Exhibition",
+    "typeLine": "Sorcery — Lesson",
+    "set": "STX",
+    "collectorNumber": "5",
+    "imagePng": "https://cards.scryfall.io/png/front/2/0/2047592c-739c-41dd-b3e8-31ae1c7688ab.png?1783927395",
+    "imageLarge": "https://cards.scryfall.io/large/front/2/0/2047592c-739c-41dd-b3e8-31ae1c7688ab.jpg?1783927395",
+    "scryfallUri": "https://scryfall.com/card/stx/5/mascot-exhibition?utm_source=api"
+  },
+  {
+    "id": "adcbe115-5482-4e5a-95bb-8ccbb01d3547",
+    "name": "Mercurial Transformation",
+    "typeLine": "Sorcery — Lesson",
+    "set": "STX",
+    "collectorNumber": "47",
+    "imagePng": "https://cards.scryfall.io/png/front/a/d/adcbe115-5482-4e5a-95bb-8ccbb01d3547.png?1783927377",
+    "imageLarge": "https://cards.scryfall.io/large/front/a/d/adcbe115-5482-4e5a-95bb-8ccbb01d3547.jpg?1783927377",
+    "scryfallUri": "https://scryfall.com/card/stx/47/mercurial-transformation?utm_source=api"
+  },
+  {
+    "id": "5e1b68a4-fb8d-4b59-b049-73505296f775",
+    "name": "Necrotic Fumes",
+    "typeLine": "Sorcery — Lesson",
+    "set": "STX",
+    "collectorNumber": "78",
+    "imagePng": "https://cards.scryfall.io/png/front/5/e/5e1b68a4-fb8d-4b59-b049-73505296f775.png?1783927365",
+    "imageLarge": "https://cards.scryfall.io/large/front/5/e/5e1b68a4-fb8d-4b59-b049-73505296f775.jpg?1783927365",
+    "scryfallUri": "https://scryfall.com/card/stx/78/necrotic-fumes?utm_source=api"
+  },
+  {
+    "id": "6267e19a-a777-4767-8433-86b6624362b6",
+    "name": "Pest Summoning",
+    "typeLine": "Sorcery — Lesson",
+    "set": "STX",
+    "collectorNumber": "211",
+    "imagePng": "https://cards.scryfall.io/png/front/6/2/6267e19a-a777-4767-8433-86b6624362b6.png?1783927303",
+    "imageLarge": "https://cards.scryfall.io/large/front/6/2/6267e19a-a777-4767-8433-86b6624362b6.jpg?1783927303",
+    "scryfallUri": "https://scryfall.com/card/stx/211/pest-summoning?utm_source=api"
+  },
+  {
+    "id": "7bfc408e-34d6-4e94-8678-4cc229cbc6f5",
+    "name": "Reduce to Memory",
+    "typeLine": "Sorcery — Lesson",
+    "set": "STX",
+    "collectorNumber": "25",
+    "imagePng": "https://cards.scryfall.io/png/front/7/b/7bfc408e-34d6-4e94-8678-4cc229cbc6f5.png?1783927387",
+    "imageLarge": "https://cards.scryfall.io/large/front/7/b/7bfc408e-34d6-4e94-8678-4cc229cbc6f5.jpg?1783927387",
+    "scryfallUri": "https://scryfall.com/card/stx/25/reduce-to-memory?utm_source=api"
+  },
+  {
+    "id": "74be6236-4095-419c-9927-fbd874df21f8",
+    "name": "Spirit Summoning",
+    "typeLine": "Sorcery — Lesson",
+    "set": "STX",
+    "collectorNumber": "236",
+    "imagePng": "https://cards.scryfall.io/png/front/7/4/74be6236-4095-419c-9927-fbd874df21f8.png?1783927289",
+    "imageLarge": "https://cards.scryfall.io/large/front/7/4/74be6236-4095-419c-9927-fbd874df21f8.jpg?1783927289",
+    "scryfallUri": "https://scryfall.com/card/stx/236/spirit-summoning?utm_source=api"
+  },
+  {
+    "id": "55c99486-ae64-4293-81fb-a4b02e8fcae6",
+    "name": "Start from Scratch",
+    "typeLine": "Sorcery — Lesson",
+    "set": "STX",
+    "collectorNumber": "114",
+    "imagePng": "https://cards.scryfall.io/png/front/5/5/55c99486-ae64-4293-81fb-a4b02e8fcae6.png?1783927350",
+    "imageLarge": "https://cards.scryfall.io/large/front/5/5/55c99486-ae64-4293-81fb-a4b02e8fcae6.jpg?1783927350",
+    "scryfallUri": "https://scryfall.com/card/stx/114/start-from-scratch?utm_source=api"
+  },
+  {
+    "id": "967148b1-2bb6-4bc0-95e6-c45fcf99afd2",
+    "name": "Teachings of the Archaics",
+    "typeLine": "Sorcery — Lesson",
+    "set": "STX",
+    "collectorNumber": "57",
+    "imagePng": "https://cards.scryfall.io/png/front/9/6/967148b1-2bb6-4bc0-95e6-c45fcf99afd2.png?1783927373",
+    "imageLarge": "https://cards.scryfall.io/large/front/9/6/967148b1-2bb6-4bc0-95e6-c45fcf99afd2.jpg?1783927373",
+    "scryfallUri": "https://scryfall.com/card/stx/57/teachings-of-the-archaics?utm_source=api"
+  }
+]

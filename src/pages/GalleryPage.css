@@ -1,0 +1,68 @@
+.gallery {
+  display: flex;
+  flex-direction: column;
+  gap: 1.25rem;
+  padding: 1.25rem;
+  max-width: 1100px;
+  margin: 0 auto;
+  width: 100%;
+}
+
+.gallery__shuffle {
+  align-self: center;
+  padding: 0.4rem 0.9rem;
+  border: 1px solid var(--border);
+  border-radius: 6px;
+  background: var(--surface);
+  color: var(--text-h);
+  font-size: 0.85rem;
+  cursor: pointer;
+}
+
+.gallery__shuffle:hover {
+  background: var(--surface-muted);
+}
+
+.gallery__grid {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+  gap: 1rem;
+}
+
+.gallery__cell {
+  display: flex;
+}
+
+.card-tile {
+  display: block;
+  width: 100%;
+  border-radius: 4.75% / 3.5%;
+  overflow: hidden;
+  line-height: 0;
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.25);
+  transition:
+    transform 0.15s ease,
+    box-shadow 0.15s ease;
+}
+
+.card-tile:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.35);
+}
+
+.card-tile__img {
+  display: block;
+  width: 100%;
+  height: auto;
+  aspect-ratio: 745 / 1040;
+  background: var(--surface-muted);
+}
+
+.page-status {
+  padding: 2rem 1rem;
+  text-align: center;
+  color: var(--text-muted);
+}
