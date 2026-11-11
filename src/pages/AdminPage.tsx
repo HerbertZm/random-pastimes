@@ -1,91 +1,111 @@
-import { useState, type FormEvent } from 'react'
-import { useMappings } from '../context/MappingsContext'
-import type { CostMapping } from '../types/mapping'
+import { useMemo, useState, type FormEvent } from 'react'
+import { Link } from 'react-router-dom'
+import { useAbilities } from '../context/AbilitiesContext'
+import type { Ability, AbilityInput } from '../types/ability'
+import { absoluteCostOf, normalizeCost } from '../utils/cost'
 import './AdminPage.css'
 
-function outcomesFromText(text: string): string[] {
-  return text
-    .split('\n')
-    .map((line) => line.trim())
-    .filter(Boolean)
-}
-
-function outcomesToText(outcomes: string[]): string {
-  return outcomes.join('\n')
-}
-
-interface MappingFormProps {
-  initialKey?: string
-  initialCostLabel?: string
-  initialOutcomesText?: string
+interface AbilityFormProps {
+  initial?: Ability
+  sources: string[]
   submitLabel: string
-  onSubmit: (key: string, costLabel: string, outcomes: string[]) => void
+  onSubmit: (input: AbilityInput) => void
   onCancel?: () => void
 }
 
-function MappingForm({
-  initialKey = '',
-  initialCostLabel = '',
-  initialOutcomesText = '',
+function AbilityForm({
+  initial,
+  sources,
   submitLabel,
   onSubmit,
   onCancel,
-}: MappingFormProps) {
-  const [key, setKey] = useState(initialKey)
-  const [costLabel, setCostLabel] = useState(initialCostLabel)
-  const [outcomesText, setOutcomesText] = useState(initialOutcomesText)
+}: AbilityFormProps) {
+  const [source, setSource] = useState(initial?.source ?? '')
+  const [cost, setCost] = useState(initial?.cost ?? '')
+  const [oracleText, setOracleText] = useState(initial?.oracleText ?? '')
+
+  const normalizedCost = normalizeCost(cost)
+  const costError =
+    cost.trim() && !normalizedCost
+      ? 'Use +N, −N, 0 or −X (e.g. +1, -3, 0, -X)'
+      : null
 
   function handleSubmit(event: FormEvent) {
     event.preventDefault()
-    const trimmedKey = key.trim()
-    const trimmedLabel = costLabel.trim()
-    const outcomes = outcomesFromText(outcomesText)
-    if (!trimmedKey || !trimmedLabel || outcomes.length === 0) return
-    onSubmit(trimmedKey, trimmedLabel, outcomes)
+    const trimmedSource = source.trim()
+    const trimmedText = oracleText.trim()
+    if (!trimmedSource || !normalizedCost || !trimmedText) return
+
+    onSubmit({
+      source: trimmedSource,
+      cost: normalizedCost,
+      absoluteCost: absoluteCostOf(normalizedCost),
+      oracleText: trimmedText,
+    })
+
     if (!onCancel) {
-      setCostLabel('')
-      setOutcomesText('')
+      setCost('')
+      setOracleText('')
     }
   }
 
   return (
-    <form className="mapping-form" onSubmit={handleSubmit}>
+    <form className="ability-form" onSubmit={handleSubmit}>
       <label className="field">
-        <span className="field__label">Button key</span>
-        <input
-          className="field__input field__input--short"
-          value={key}
-          onChange={(event) => setKey(event.target.value)}
-          placeholder="e.g. 1"
-          required
-        />
-      </label>
-
-      <label className="field">
-        <span className="field__label">Cost button label</span>
+        <span className="field__label">Source</span>
         <input
           className="field__input"
-          value={costLabel}
-          onChange={(event) => setCostLabel(event.target.value)}
-          placeholder="e.g. Roll for lunch"
+          value={source}
+          onChange={(event) => setSource(event.target.value)}
+          placeholder="e.g. Jace, the Mind Sculptor"
+          list="ability-sources"
           required
         />
+        <datalist id="ability-sources">
+          {sources.map((name) => (
+            <option key={name} value={name} />
+          ))}
+        </datalist>
       </label>
+
+      <div className="ability-form__row">
+        <label className="field">
+          <span className="field__label">Cost</span>
+          <input
+            className="field__input field__input--short"
+            value={cost}
+            onChange={(event) => setCost(event.target.value)}
+            placeholder="+1"
+            aria-invalid={Boolean(costError)}
+            required
+          />
+        </label>
+        <div className="field">
+          <span className="field__label">Absolute cost</span>
+          <span className="field__readonly">
+            {normalizedCost ? String(absoluteCostOf(normalizedCost)) : '—'}
+          </span>
+        </div>
+      </div>
+      {costError && <p className="field__error">{costError}</p>}
 
       <label className="field">
-        <span className="field__label">Outcomes (one per line)</span>
+        <span className="field__label">Oracle text</span>
         <textarea
           className="field__textarea"
-          value={outcomesText}
-          onChange={(event) => setOutcomesText(event.target.value)}
-          placeholder={'Pizza\nSushi\nTacos'}
-          rows={6}
+          value={oracleText}
+          onChange={(event) => setOracleText(event.target.value)}
+          rows={3}
           required
         />
       </label>
 
-      <div className="mapping-form__actions">
-        <button type="submit" className="btn btn--primary">
+      <div className="ability-form__actions">
+        <button
+          type="submit"
+          className="btn btn--primary"
+          disabled={!normalizedCost}
+        >
           {submitLabel}
         </button>
         {onCancel && (
@@ -98,105 +118,162 @@ function MappingForm({
   )
 }
 
-function MappingCard({
-  mapping,
-  onEdit,
-  onDelete,
-}: {
-  mapping: CostMapping
-  onEdit: () => void
-  onDelete: () => void
-}) {
-  return (
-    <article className="mapping-card">
-      <div className="mapping-card__header">
-        <h3 className="mapping-card__title">
-          <span className="mapping-card__key">{mapping.key}</span>
-          {mapping.costLabel}
-        </h3>
-        <div className="mapping-card__actions">
-          <button type="button" className="btn btn--small" onClick={onEdit}>
-            Edit
-          </button>
-          <button
-            type="button"
-            className="btn btn--small btn--danger"
-            onClick={onDelete}
-          >
-            Delete
-          </button>
-        </div>
-      </div>
-      <ul className="mapping-card__outcomes">
-        {mapping.outcomes.map((outcome) => (
-          <li key={outcome}>{outcome}</li>
-        ))}
-      </ul>
-    </article>
-  )
-}
-
-export function AdminPage() {
-  const { mappings, loading, addMapping, updateMapping, deleteMapping } =
-    useMappings()
+export function AdminPage({ onLock }: { onLock: () => void }) {
+  const {
+    abilities,
+    loading,
+    addAbility,
+    updateAbility,
+    deleteAbility,
+    resetAbilities,
+  } = useAbilities()
   const [editingId, setEditingId] = useState<string | null>(null)
+  const [filter, setFilter] = useState('')
 
-  const editingMapping = mappings.find((mapping) => mapping.id === editingId)
+  const editing = abilities.find((ability) => ability.id === editingId)
+
+  const sources = useMemo(
+    () => [...new Set(abilities.map((ability) => ability.source))].sort(),
+    [abilities],
+  )
+
+  const visible = useMemo(() => {
+    const query = filter.trim().toLowerCase()
+    if (!query) return abilities
+    return abilities.filter((ability) =>
+      [ability.source, ability.cost, ability.oracleText].some((value) =>
+        value.toLowerCase().includes(query),
+      ),
+    )
+  }, [abilities, filter])
 
   if (loading) {
-    return <p className="page-status">Loading mappings…</p>
+    return <p className="page-status">Loading abilities…</p>
   }
 
   return (
     <div className="admin-page">
-      <section className="admin-page__section">
-        <h2>{editingMapping ? 'Edit mapping' : 'Create mapping'}</h2>
-        <p className="admin-page__hint">
-          Each mapping pairs a cost button with a list of possible outcomes.
-        </p>
+      <header className="admin-page__header">
+        <h1>Admin</h1>
+        <div className="admin-page__header-actions">
+          <Link to="/" className="btn btn--small">
+            View site
+          </Link>
+          <button type="button" className="btn btn--small" onClick={onLock}>
+            Lock
+          </button>
+        </div>
+      </header>
 
-        {editingMapping ? (
-          <MappingForm
-            key={editingMapping.id}
-            initialKey={editingMapping.key}
-            initialCostLabel={editingMapping.costLabel}
-            initialOutcomesText={outcomesToText(editingMapping.outcomes)}
+      <section className="admin-page__section">
+        <h2>{editing ? 'Edit ability' : 'Add ability'}</h2>
+        {editing ? (
+          <AbilityForm
+            key={editing.id}
+            initial={editing}
+            sources={sources}
             submitLabel="Save changes"
-            onSubmit={(key, costLabel, outcomes) => {
-              void updateMapping(editingMapping.id, { key, costLabel, outcomes })
+            onSubmit={(input) => {
+              void updateAbility(editing.id, input)
               setEditingId(null)
             }}
             onCancel={() => setEditingId(null)}
           />
         ) : (
-          <MappingForm
-            key={mappings.length}
-            initialKey={String(mappings.length + 1)}
-            submitLabel="Add mapping"
-            onSubmit={(key, costLabel, outcomes) => {
-              void addMapping({ key, costLabel, outcomes })
-            }}
+          <AbilityForm
+            sources={sources}
+            submitLabel="Add ability"
+            onSubmit={(input) => void addAbility(input)}
           />
         )}
       </section>
 
       <section className="admin-page__section">
-        <h2>Existing mappings ({mappings.length})</h2>
-        {mappings.length === 0 ? (
-          <p className="page-status">No mappings yet. Create one above.</p>
+        <div className="admin-page__list-header">
+          <h2>Abilities ({abilities.length})</h2>
+          <button
+            type="button"
+            className="btn btn--small"
+            onClick={() => {
+              if (
+                window.confirm(
+                  'Replace all abilities with the default Jace list? Your edits will be lost.',
+                )
+              ) {
+                setEditingId(null)
+                void resetAbilities()
+              }
+            }}
+          >
+            Reset to defaults
+          </button>
+        </div>
+
+        <input
+          className="field__input admin-page__filter"
+          type="search"
+          value={filter}
+          onChange={(event) => setFilter(event.target.value)}
+          placeholder="Filter by source, cost or text"
+          aria-label="Filter abilities"
+        />
+
+        {visible.length === 0 ? (
+          <p className="page-status">No abilities match.</p>
         ) : (
-          <div className="mapping-list">
-            {mappings.map((mapping) => (
-              <MappingCard
-                key={mapping.id}
-                mapping={mapping}
-                onEdit={() => setEditingId(mapping.id)}
-                onDelete={() => {
-                  if (editingId === mapping.id) setEditingId(null)
-                  void deleteMapping(mapping.id)
-                }}
-              />
-            ))}
+          <div className="ability-table__wrap">
+            <table className="ability-table">
+              <thead>
+                <tr>
+                  <th>Source</th>
+                  <th>Cost</th>
+                  <th title="Absolute cost">Abs.</th>
+                  <th>Oracle text</th>
+                  <th aria-label="Actions" />
+                </tr>
+              </thead>
+              <tbody>
+                {visible.map((ability) => (
+                  <tr
+                    key={ability.id}
+                    className={
+                      ability.id === editingId
+                        ? 'ability-table__row--editing'
+                        : undefined
+                    }
+                  >
+                    <td className="ability-table__source">{ability.source}</td>
+                    <td className="ability-table__cost">{ability.cost}</td>
+                    <td className="ability-table__cost">
+                      {ability.absoluteCost}
+                    </td>
+                    <td>{ability.oracleText}</td>
+                    <td className="ability-table__actions">
+                      <button
+                        type="button"
+                        className="btn btn--small"
+                        onClick={() => {
+                          setEditingId(ability.id)
+                          window.scrollTo({ top: 0, behavior: 'smooth' })
+                        }}
+                      >
+                        Edit
+                      </button>
+                      <button
+                        type="button"
+                        className="btn btn--small btn--danger"
+                        onClick={() => {
+                          if (editingId === ability.id) setEditingId(null)
+                          void deleteAbility(ability.id)
+                        }}
+                      >
+                        Delete
+                      </button>
+                    </td>
+                  </tr>
+                ))}
+              </tbody>
+            </table>
           </div>
         )}
       </section>

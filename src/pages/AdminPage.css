@@ -3,30 +3,69 @@
   display: flex;
   flex-direction: column;
   gap: 2rem;
-  max-width: 720px;
+  max-width: 1100px;
+  margin: 0 auto;
+}
+
+.admin-page__header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 1rem;
+  margin-bottom: -0.5rem;
+}
+
+.admin-page__header h1 {
+  margin: 0;
+  font-size: 1.4rem;
+  background: var(--brand-silver);
+  background-clip: text;
+  -webkit-background-clip: text;
+  color: transparent;
+}
+
+.admin-page__header-actions {
+  display: flex;
+  gap: 0.5rem;
+}
+
+.admin-page__header-actions .btn {
+  text-decoration: none;
 }
 
 .admin-page__section h2 {
-  margin: 0 0 0.5rem;
+  margin: 0 0 0.75rem;
   font-size: 1.1rem;
   color: var(--text-h);
 }
 
-.admin-page__hint {
-  margin: 0 0 1rem;
-  color: var(--text-muted);
-  font-size: 0.95rem;
+.admin-page__list-header {
+  display: flex;
+  align-items: baseline;
+  justify-content: space-between;
+  gap: 1rem;
 }
 
-.page-status {
-  padding: 1.5rem;
-  color: var(--text-muted);
+.admin-page__filter {
+  margin-bottom: 0.75rem;
+  max-width: 24rem;
 }
 
-.mapping-form {
+.ability-form {
   display: flex;
   flex-direction: column;
   gap: 1rem;
+  max-width: 640px;
+}
+
+.ability-form__row {
+  display: flex;
+  gap: 1.5rem;
+}
+
+.ability-form__actions {
+  display: flex;
+  gap: 0.5rem;
 }
 
 .field {
@@ -37,18 +76,13 @@
 
 .field__label {
   font-size: 0.9rem;
-  font-weight: 500;
+  font-weight: 700;
   color: var(--text-h);
-}
-
-.field__input--short {
-  max-width: 6rem;
 }
 
 .field__input,
 .field__textarea {
   width: 100%;
-  box-sizing: border-box;
   padding: 0.6rem 0.75rem;
   border: 1px solid var(--border);
   border-radius: 6px;
@@ -57,100 +91,82 @@
   font: inherit;
 }
 
+.field__input--short {
+  max-width: 6rem;
+}
+
+.field__input[aria-invalid='true'] {
+  border-color: #f04438;
+}
+
 .field__textarea {
   resize: vertical;
-  min-height: 8rem;
 }
 
-.mapping-form__actions {
-  display: flex;
-  gap: 0.5rem;
-}
-
-.btn {
-  border: 1px solid var(--border);
-  border-radius: 6px;
-  background: var(--surface);
+.field__readonly {
+  padding: 0.6rem 0;
+  font-weight: 700;
   color: var(--text-h);
-  padding: 0.5rem 0.9rem;
-  font: inherit;
-  cursor: pointer;
 }
 
-.btn:hover {
-  background: var(--surface-muted);
-}
-
-.btn--primary {
-  background: var(--accent);
-  border-color: var(--accent);
-  color: #fff;
-}
-
-.btn--primary:hover {
-  filter: brightness(1.05);
-}
-
-.btn--small {
-  padding: 0.3rem 0.6rem;
+.field__error {
+  margin: -0.5rem 0 0;
   font-size: 0.85rem;
+  color: #f04438;
 }
 
-.btn--danger {
-  color: #b42318;
-  border-color: #fecdca;
-}
-
-.mapping-list {
-  display: flex;
-  flex-direction: column;
-  gap: 0.75rem;
-}
-
-.mapping-card {
+.ability-table__wrap {
+  overflow-x: auto;
   border: 1px solid var(--border);
   border-radius: 8px;
-  padding: 0.85rem 1rem;
+}
+
+.ability-table {
+  width: 100%;
+  border-collapse: collapse;
+  font-size: 0.9rem;
   background: var(--surface);
 }
 
-.mapping-card__header {
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-  gap: 0.75rem;
-  margin-bottom: 0.5rem;
+.ability-table th,
+.ability-table td {
+  padding: 0.6rem 0.75rem;
+  text-align: left;
+  vertical-align: top;
+  border-bottom: 1px solid var(--border);
 }
 
-.mapping-card__title {
-  margin: 0;
-  font-size: 1rem;
+.ability-table tbody tr:last-child td {
+  border-bottom: none;
+}
+
+.ability-table th {
+  background: var(--surface-muted);
   color: var(--text-h);
-  display: flex;
-  align-items: center;
-  gap: 0.5rem;
+  font-weight: 700;
+  white-space: nowrap;
 }
 
-.mapping-card__key {
-  display: inline-flex;
-  align-items: center;
-  justify-content: center;
-  min-width: 1.75rem;
-  padding: 0.15rem 0.4rem;
-  border: 1px solid var(--border);
-  border-radius: 4px;
-  font-size: 0.85rem;
-  font-weight: 600;
+.ability-table__source {
+  white-space: nowrap;
+  color: var(--text-h);
 }
 
-.mapping-card__actions {
-  display: flex;
-  gap: 0.35rem;
+.ability-table__cost {
+  white-space: nowrap;
+  font-weight: 700;
+  font-variant-numeric: tabular-nums;
 }
 
-.mapping-card__outcomes {
-  margin: 0;
-  padding-left: 1.2rem;
-  color: var(--text-muted);
-  font-size: 0.9rem;
+.ability-table__actions {
+  white-space: nowrap;
+  text-align: right;
+}
+
+.ability-table__actions .btn + .btn {
+  margin-left: 0.35rem;
+}
+
+.ability-table__row--editing td {
+  background: var(--accent-bg);
 }

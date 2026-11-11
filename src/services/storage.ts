@@ -1,36 +1,52 @@
-import type { CostMapping } from '../types/mapping'
+import defaultAbilities from '../data/jaceAbilities.json'
+import type { Ability } from '../types/ability'
+import { absoluteCostOf } from '../utils/cost'
 
-export interface MappingsRepository {
-  load(): Promise<CostMapping[]>
-  save(mappings: CostMapping[]): Promise<void>
+export interface AbilitiesRepository {
+  load(): Promise<Ability[]>
+  save(abilities: Ability[]): Promise<void>
+  reset(): Promise<Ability[]>
 }
 
-const STORAGE_KEY = 'random-pastimes:mappings'
+const STORAGE_KEY = 'random-pastimes:abilities'
 
-export class LocalMappingsRepository implements MappingsRepository {
-  async load(): Promise<CostMapping[]> {
+export function getDefaultAbilities(): Ability[] {
+  return (defaultAbilities as Ability[]).map((ability) => ({ ...ability }))
+}
+
+export class LocalAbilitiesRepository implements AbilitiesRepository {
+  async load(): Promise<Ability[]> {
     const raw = localStorage.getItem(STORAGE_KEY)
-    if (!raw) return []
+    if (!raw) return getDefaultAbilities()
 
     try {
-      const parsed = JSON.parse(raw) as Partial<CostMapping>[]
-      if (!Array.isArray(parsed)) return []
+      const parsed = JSON.parse(raw) as Partial<Ability>[]
+      if (!Array.isArray(parsed)) return getDefaultAbilities()
 
-      return parsed.map((mapping, index) => ({
-        id: mapping.id ?? crypto.randomUUID(),
-        key: mapping.key?.trim() || String(index + 1),
-        costLabel: mapping.costLabel ?? '',
-        outcomes: Array.isArray(mapping.outcomes) ? mapping.outcomes : [],
-      }))
+      return parsed
+        .filter((item) => item.cost && item.oracleText)
+        .map((item) => ({
+          id: item.id ?? crypto.randomUUID(),
+          source: item.source ?? '',
+          cost: item.cost!,
+          absoluteCost: absoluteCostOf(item.cost!),
+          oracleText: item.oracleText!,
+        }))
     } catch {
-      return []
+      return getDefaultAbilities()
     }
   }
 
-  async save(mappings: CostMapping[]): Promise<void> {
-    localStorage.setItem(STORAGE_KEY, JSON.stringify(mappings))
+  async save(abilities: Ability[]): Promise<void> {
+    localStorage.setItem(STORAGE_KEY, JSON.stringify(abilities))
+  }
+
+  async reset(): Promise<Ability[]> {
+    localStorage.removeItem(STORAGE_KEY)
+    return getDefaultAbilities()
   }
 }
 
 // Swap this implementation when adding a remote API later.
-export const mappingsRepository: MappingsRepository = new LocalMappingsRepository()
+export const abilitiesRepository: AbilitiesRepository =
+  new LocalAbilitiesRepository()

@@ -1,0 +1,359 @@
+[
+  {
+    "id": "jace-multiverse-architect-1",
+    "source": "Jace, Multiverse Architect",
+    "cost": "+1",
+    "absoluteCost": 1,
+    "oracleText": "Draw two cards, then put a card from your hand on the bottom of your library."
+  },
+  {
+    "id": "jace-multiverse-architect-2",
+    "source": "Jace, Multiverse Architect",
+    "cost": "−3",
+    "absoluteCost": 3,
+    "oracleText": "Exile another target planeswalker or creature you control. Reveal cards from the top of your library until you reveal a creature or planeswalker card. Put that card onto the battlefield and the rest on the bottom of your library in a random order."
+  },
+  {
+    "id": "jace-reality-sculptor-1",
+    "source": "Jace, Reality Sculptor",
+    "cost": "+1",
+    "absoluteCost": 1,
+    "oracleText": "Empower Jace X, where X is the number of Islands you control."
+  },
+  {
+    "id": "jace-reality-sculptor-2",
+    "source": "Jace, Reality Sculptor",
+    "cost": "−3",
+    "absoluteCost": 3,
+    "oracleText": "Until your next turn, whenever a creature attacks you or a planeswalker you control, it gets -5/-0 until end of turn."
+  },
+  {
+    "id": "jace-reality-sculptor-3",
+    "source": "Jace, Reality Sculptor",
+    "cost": "0",
+    "absoluteCost": 0,
+    "oracleText": "Exile all but the bottom card of each opponent's library. Activate only if there are twenty-five or more loyalty counters among Jaces you control."
+  },
+  {
+    "id": "the-theorist-jace-beleren-1",
+    "source": "The Theorist, Jace Beleren",
+    "cost": "+1",
+    "absoluteCost": 1,
+    "oracleText": "Create a 1/1 blue Illusion creature token."
+  },
+  {
+    "id": "the-theorist-jace-beleren-2",
+    "source": "The Theorist, Jace Beleren",
+    "cost": "−2",
+    "absoluteCost": 2,
+    "oracleText": "For each opponent, return up to one target artifact or creature that player controls to its owner's hand."
+  },
+  {
+    "id": "the-theorist-jace-beleren-3",
+    "source": "The Theorist, Jace Beleren",
+    "cost": "−6",
+    "absoluteCost": 6,
+    "oracleText": "Draw three cards. Then put X +1/+1 counters on each creature you control, where X is the number of cards in your hand."
+  },
+  {
+    "id": "jace-unraveler-of-secrets-1",
+    "source": "Jace, Unraveler of Secrets",
+    "cost": "+1",
+    "absoluteCost": 1,
+    "oracleText": "Scry 1, then draw a card."
+  },
+  {
+    "id": "jace-unraveler-of-secrets-2",
+    "source": "Jace, Unraveler of Secrets",
+    "cost": "−2",
+    "absoluteCost": 2,
+    "oracleText": "Return target creature to its owner's hand."
+  },
+  {
+    "id": "jace-unraveler-of-secrets-3",
+    "source": "Jace, Unraveler of Secrets",
+    "cost": "−8",
+    "absoluteCost": 8,
+    "oracleText": "You get an emblem with \"Whenever an opponent casts their first spell each turn, counter that spell.\""
+  },
+  {
+    "id": "jace-reawakened-1",
+    "source": "Jace Reawakened",
+    "cost": "+1",
+    "absoluteCost": 1,
+    "oracleText": "Draw a card, then discard a card."
+  },
+  {
+    "id": "jace-reawakened-2",
+    "source": "Jace Reawakened",
+    "cost": "+1",
+    "absoluteCost": 1,
+    "oracleText": "You may exile a nonland card with mana value 3 or less from your hand. If you do, it becomes plotted."
+  },
+  {
+    "id": "jace-reawakened-3",
+    "source": "Jace Reawakened",
+    "cost": "−6",
+    "absoluteCost": 6,
+    "oracleText": "Until end of turn, whenever you cast a spell, copy it. You may choose new targets for the copy."
+  },
+  {
+    "id": "jace-mirror-mage-1",
+    "source": "Jace, Mirror Mage",
+    "cost": "+1",
+    "absoluteCost": 1,
+    "oracleText": "Scry 2."
+  },
+  {
+    "id": "jace-mirror-mage-2",
+    "source": "Jace, Mirror Mage",
+    "cost": "0",
+    "absoluteCost": 0,
+    "oracleText": "Draw a card and reveal it. Remove a number of loyalty counters equal to that card's mana value from Jace."
+  },
+  {
+    "id": "jace-architect-of-thought-1",
+    "source": "Jace, Architect of Thought",
+    "cost": "+1",
+    "absoluteCost": 1,
+    "oracleText": "Until your next turn, whenever a creature an opponent controls attacks, it gets -1/-0 until end of turn."
+  },
+  {
+    "id": "jace-architect-of-thought-2",
+    "source": "Jace, Architect of Thought",
+    "cost": "−2",
+    "absoluteCost": 2,
+    "oracleText": "Reveal the top three cards of your library. An opponent separates those cards into two piles. Put one pile into your hand and the other on the bottom of your library in any order."
+  },
+  {
+    "id": "jace-architect-of-thought-3",
+    "source": "Jace, Architect of Thought",
+    "cost": "−8",
+    "absoluteCost": 8,
+    "oracleText": "For each player, search that player's library for a nonland card and exile it, then that player shuffles. You may cast those cards without paying their mana costs."
+  },
+  {
+    "id": "jace-beleren-1",
+    "source": "Jace Beleren",
+    "cost": "+2",
+    "absoluteCost": 2,
+    "oracleText": "Each player draws a card."
+  },
+  {
+    "id": "jace-beleren-2",
+    "source": "Jace Beleren",
+    "cost": "−1",
+    "absoluteCost": 1,
+    "oracleText": "Target player draws a card."
+  },
+  {
+    "id": "jace-beleren-3",
+    "source": "Jace Beleren",
+    "cost": "−10",
+    "absoluteCost": 10,
+    "oracleText": "Target player mills twenty cards."
+  },
+  {
+    "id": "jace-the-perfected-mind-1",
+    "source": "Jace, the Perfected Mind",
+    "cost": "+1",
+    "absoluteCost": 1,
+    "oracleText": "Until your next turn, up to one target creature gets -3/-0."
+  },
+  {
+    "id": "jace-the-perfected-mind-2",
+    "source": "Jace, the Perfected Mind",
+    "cost": "−2",
+    "absoluteCost": 2,
+    "oracleText": "Target player mills three cards. Then if a graveyard has twenty or more cards in it, you draw three cards. Otherwise, you draw a card."
+  },
+  {
+    "id": "jace-the-perfected-mind-3",
+    "source": "Jace, the Perfected Mind",
+    "cost": "−X",
+    "absoluteCost": "X",
+    "oracleText": "Target player mills three times X cards."
+  },
+  {
+    "id": "space-beleren-1",
+    "source": "Space Beleren",
+    "cost": "+1",
+    "absoluteCost": 1,
+    "oracleText": "Creatures in each sector can be blocked this turn only by creatures in the same sector."
+  },
+  {
+    "id": "space-beleren-2",
+    "source": "Space Beleren",
+    "cost": "−1",
+    "absoluteCost": 1,
+    "oracleText": "Put a +1/+1 counter on each creature in the sector of your choice."
+  },
+  {
+    "id": "space-beleren-3",
+    "source": "Space Beleren",
+    "cost": "−5",
+    "absoluteCost": 5,
+    "oracleText": "Destroy all creatures in the sector of your choice."
+  },
+  {
+    "id": "jace-the-mind-sculptor-1",
+    "source": "Jace, the Mind Sculptor",
+    "cost": "+2",
+    "absoluteCost": 2,
+    "oracleText": "Look at the top card of target player's library. You may put that card on the bottom of that player's library."
+  },
+  {
+    "id": "jace-the-mind-sculptor-2",
+    "source": "Jace, the Mind Sculptor",
+    "cost": "0",
+    "absoluteCost": 0,
+    "oracleText": "Draw three cards, then put two cards from your hand on top of your library in any order."
+  },
+  {
+    "id": "jace-the-mind-sculptor-3",
+    "source": "Jace, the Mind Sculptor",
+    "cost": "−1",
+    "absoluteCost": 1,
+    "oracleText": "Return target creature to its owner's hand."
+  },
+  {
+    "id": "jace-the-mind-sculptor-4",
+    "source": "Jace, the Mind Sculptor",
+    "cost": "−12",
+    "absoluteCost": 12,
+    "oracleText": "Exile all cards from target player's library, then that player shuffles their hand into their library."
+  },
+  {
+    "id": "jace-arcane-strategist-1",
+    "source": "Jace, Arcane Strategist",
+    "cost": "+1",
+    "absoluteCost": 1,
+    "oracleText": "Draw a card."
+  },
+  {
+    "id": "jace-arcane-strategist-2",
+    "source": "Jace, Arcane Strategist",
+    "cost": "−7",
+    "absoluteCost": 7,
+    "oracleText": "Creatures you control can't be blocked this turn."
+  },
+  {
+    "id": "jace-wielder-of-mysteries-1",
+    "source": "Jace, Wielder of Mysteries",
+    "cost": "+1",
+    "absoluteCost": 1,
+    "oracleText": "Target player mills two cards. Draw a card."
+  },
+  {
+    "id": "jace-wielder-of-mysteries-2",
+    "source": "Jace, Wielder of Mysteries",
+    "cost": "−8",
+    "absoluteCost": 8,
+    "oracleText": "Draw seven cards. Then if your library has no cards in it, you win the game."
+  },
+  {
+    "id": "jace-ingenious-mind-mage-1",
+    "source": "Jace, Ingenious Mind-Mage",
+    "cost": "+1",
+    "absoluteCost": 1,
+    "oracleText": "Draw a card."
+  },
+  {
+    "id": "jace-ingenious-mind-mage-2",
+    "source": "Jace, Ingenious Mind-Mage",
+    "cost": "+1",
+    "absoluteCost": 1,
+    "oracleText": "Untap all creatures you control."
+  },
+  {
+    "id": "jace-ingenious-mind-mage-3",
+    "source": "Jace, Ingenious Mind-Mage",
+    "cost": "−9",
+    "absoluteCost": 9,
+    "oracleText": "Gain control of up to three target creatures."
+  },
+  {
+    "id": "jace-cunning-castaway-1",
+    "source": "Jace, Cunning Castaway",
+    "cost": "+1",
+    "absoluteCost": 1,
+    "oracleText": "Whenever one or more creatures you control deal combat damage to a player this turn, draw a card, then discard a card."
+  },
+  {
+    "id": "jace-cunning-castaway-2",
+    "source": "Jace, Cunning Castaway",
+    "cost": "−2",
+    "absoluteCost": 2,
+    "oracleText": "Create a 2/2 blue Illusion creature token with \"When this token becomes the target of a spell, sacrifice it.\""
+  },
+  {
+    "id": "jace-cunning-castaway-3",
+    "source": "Jace, Cunning Castaway",
+    "cost": "−5",
+    "absoluteCost": 5,
+    "oracleText": "Create two tokens that are copies of Jace, except they're not legendary."
+  },
+  {
+    "id": "jace-telepath-unbound-1",
+    "source": "Jace, Telepath Unbound",
+    "cost": "+1",
+    "absoluteCost": 1,
+    "oracleText": "Up to one target creature gets -2/-0 until your next turn."
+  },
+  {
+    "id": "jace-telepath-unbound-2",
+    "source": "Jace, Telepath Unbound",
+    "cost": "−3",
+    "absoluteCost": 3,
+    "oracleText": "You may cast target instant or sorcery card from your graveyard this turn. If that spell would be put into your graveyard, exile it instead."
+  },
+  {
+    "id": "jace-telepath-unbound-3",
+    "source": "Jace, Telepath Unbound",
+    "cost": "−9",
+    "absoluteCost": 9,
+    "oracleText": "You get an emblem with \"Whenever you cast a spell, target opponent mills five cards.\""
+  },
+  {
+    "id": "jace-the-living-guildpact-1",
+    "source": "Jace, the Living Guildpact",
+    "cost": "+1",
+    "absoluteCost": 1,
+    "oracleText": "Look at the top two cards of your library. Put one of them into your graveyard."
+  },
+  {
+    "id": "jace-the-living-guildpact-2",
+    "source": "Jace, the Living Guildpact",
+    "cost": "−3",
+    "absoluteCost": 3,
+    "oracleText": "Return another target nonland permanent to its owner's hand."
+  },
+  {
+    "id": "jace-the-living-guildpact-3",
+    "source": "Jace, the Living Guildpact",
+    "cost": "−8",
+    "absoluteCost": 8,
+    "oracleText": "Each player shuffles their hand and graveyard into their library. You draw seven cards."
+  },
+  {
+    "id": "jace-memory-adept-1",
+    "source": "Jace, Memory Adept",
+    "cost": "+1",
+    "absoluteCost": 1,
+    "oracleText": "Draw a card. Target player mills a card."
+  },
+  {
+    "id": "jace-memory-adept-2",
+    "source": "Jace, Memory Adept",
+    "cost": "0",
+    "absoluteCost": 0,
+    "oracleText": "Target player mills ten cards."
+  },
+  {
+    "id": "jace-memory-adept-3",
+    "source": "Jace, Memory Adept",
+    "cost": "−7",
+    "absoluteCost": 7,
+    "oracleText": "Any number of target players each draw twenty cards."
+  }
+]

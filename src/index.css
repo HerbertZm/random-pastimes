@@ -1,15 +1,68 @@
-:root {
-  --text: #4b5563;
-  --text-h: #111827;
-  --text-muted: #6b7280;
-  --bg: #f9fafb;
-  --surface: #ffffff;
-  --surface-muted: #f3f4f6;
-  --border: #e5e7eb;
-  --accent: #7c3aed;
-  --accent-bg: rgba(124, 58, 237, 0.1);
+/*
+ * Typography — MagicCon brand: Gotham Bold for headers/titles,
+ * Gotham Book (or Regular) for body text.
+ * Gotham is licensed, so it isn't bundled. It's used if installed on the
+ * machine, or if you drop the files into public/fonts/ with the names below.
+ * Otherwise Montserrat (a close free match) is used.
+ */
+@font-face {
+  font-family: 'Gotham';
+  font-weight: 400;
+  font-style: normal;
+  font-display: swap;
+  src:
+    local('Gotham Book'),
+    local('Gotham-Book'),
+    local('Gotham Regular'),
+    local('Gotham-Regular'),
+    url('/fonts/Gotham-Book.woff2') format('woff2'),
+    url('/fonts/Gotham-Book.otf') format('opentype');
+}
 
-  font-family: system-ui, 'Segoe UI', Roboto, sans-serif;
+@font-face {
+  font-family: 'Gotham';
+  font-weight: 700;
+  font-style: normal;
+  font-display: swap;
+  src:
+    local('Gotham Bold'),
+    local('Gotham-Bold'),
+    url('/fonts/Gotham-Bold.woff2') format('woff2'),
+    url('/fonts/Gotham-Bold.otf') format('opentype');
+}
+
+:root {
+  /* MagicCon palette */
+  --brand-purple: #5a3c89; /* Primary purple, PMS 2587C */
+  --brand-purple-light: #876da9; /* Secondary purple, PMS 2655C */
+  --brand-black: #000413; /* Rich black */
+  --brand-gray-dark: #7d8b97; /* PMS Cool Gray 7C */
+  --brand-gray-light: #cddedd; /* PMS Cool Gray 3C */
+  --brand-silver: linear-gradient(
+    90deg,
+    var(--brand-gray-light) 0%,
+    var(--brand-gray-dark) 50%,
+    var(--brand-gray-light) 100%
+  ); /* Gradient silver build, PMS 877C */
+
+  /* Theme roles */
+  --bg: var(--brand-black);
+  --surface: #0b0f1e;
+  --surface-muted: #161b2b;
+  --border: rgba(125, 139, 151, 0.3);
+  --text: var(--brand-gray-light);
+  --text-h: #ffffff;
+  --text-muted: var(--brand-gray-dark);
+  /* Secondary purple for text/outlines on black (legibility), primary for fills. */
+  --accent: var(--brand-purple-light);
+  --accent-fill: var(--brand-purple);
+  --accent-bg: rgba(90, 60, 137, 0.28);
+
+  --font-heading: 'Gotham', 'Montserrat', system-ui, sans-serif;
+  --font-body: 'Gotham', 'Montserrat', system-ui, sans-serif;
+
+  color-scheme: dark;
+  font-family: var(--font-body);
   line-height: 1.5;
   font-weight: 400;
   color: var(--text);
@@ -20,18 +73,12 @@
   -moz-osx-font-smoothing: grayscale;
 }
 
-@media (prefers-color-scheme: dark) {
-  :root {
-    --text: #d1d5db;
-    --text-h: #f9fafb;
-    --text-muted: #9ca3af;
-    --bg: #111827;
-    --surface: #1f2937;
-    --surface-muted: #374151;
-    --border: #374151;
-    --accent: #a78bfa;
-    --accent-bg: rgba(167, 139, 250, 0.15);
-  }
+h1,
+h2,
+h3,
+h4 {
+  font-family: var(--font-heading);
+  font-weight: 700;
 }
 
 *,
@@ -51,4 +98,51 @@ body {
 
 button {
   font: inherit;
+}
+
+/* Shared */
+
+.page-status {
+  padding: 1.5rem;
+  color: var(--text-muted);
+  text-align: center;
+}
+
+.btn {
+  border: 1px solid var(--border);
+  border-radius: 6px;
+  background: var(--surface);
+  color: var(--text-h);
+  padding: 0.5rem 0.9rem;
+  font: inherit;
+  cursor: pointer;
+}
+
+.btn:hover:not(:disabled) {
+  background: var(--surface-muted);
+}
+
+.btn:disabled {
+  opacity: 0.5;
+  cursor: not-allowed;
+}
+
+.btn--primary {
+  background: var(--accent-fill);
+  border-color: var(--accent);
+  color: #fff;
+  font-weight: 700;
+}
+
+.btn--primary:hover:not(:disabled) {
+  background: var(--brand-purple-light);
+}
+
+.btn--small {
+  padding: 0.3rem 0.6rem;
+  font-size: 0.85rem;
+}
+
+.btn--danger {
+  color: #f04438;
 }
