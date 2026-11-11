@@ -7,6 +7,9 @@ export function Layout() {
       <main className="layout__main">
         <Outlet />
       </main>
+      <footer className="layout__footer">
+        ™ &amp; ©2026 Wizards of the Coast LLC.
+      </footer>
     </div>
   )
 }

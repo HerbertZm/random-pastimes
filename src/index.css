@@ -8,6 +8,7 @@
   --border: #e5e7eb;
   --accent: #7c3aed;
   --accent-bg: rgba(124, 58, 237, 0.1);
+  --brand-silver: linear-gradient(#cddedd 0%, #7d8b97 50%, #cddedd 100%);
 
   font-family: system-ui, 'Segoe UI', Roboto, sans-serif;
   line-height: 1.5;

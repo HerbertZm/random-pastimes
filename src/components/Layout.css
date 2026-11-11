@@ -29,3 +29,27 @@
   flex: 1;
   min-height: 0;
 }
+
+/* Always visible at the bottom of the viewport. */
+.layout__footer {
+  position: sticky;
+  bottom: 0;
+  z-index: 1;
+  padding: 0.6rem 1rem;
+  background: var(--bg);
+  color: var(--text-muted);
+  font-size: 0.8rem;
+  text-align: center;
+}
+
+/* Thin silver-gradient rule above the footer */
+.layout__footer::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 1px;
+  background: var(--brand-silver);
+  opacity: 0.6;
+}
